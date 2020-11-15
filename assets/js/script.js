@@ -1,42 +1,97 @@
+let display = document.getElementById('display');
+let btn = document.querySelectorAll('.btn');
+//let operatorBtn = document.getElementsByClassName('operator');
+let operator = '';
+let clear = document.getElementById('clear');
+let a = display.textContent;
+let b = ''
+let count = 0;
+
+/* clear display */
+clear.addEventListener('click', () => display.textContent = '');
+
 /* add function */
 function addValues(a, b) {
-    let addedValues = a + b;
-    console.log(addedValues);
+    let addedValues =   Number(a) + Number(b);
+    display.textContent = addedValues;
+    restoreCalc();
 }
 
 /* subtract function */
 function subtractValues(a, b) {
-    let subtractedValues = a - b;
-    console.log(subtractedValues);
+    let subtractedValues = Number(a) - Number(b);
+    display.textContent = subtractedValues;
+    restoreCalc();
 }
 
 /* mulitply function */
 function multiplyValues(a, b) {
     let mulitpliedValues = a * b;
-    console.log(mulitpliedValues);
+    display.textContent = mulitpliedValues;
+    restoreCalc();
 }
 
 /* division function */
 function divideValues(a, b){
     let dividedValues = a / b;
-    console.log(dividedValues);
+    display.textContent = dividedValues;
+    restoreCalc();
 }
 
+/* equal function */
 function operate(operator, a, b){
-    operator = operator.toLowerCase();
-   if(operator === 'addition') {
+   if(operator === '+') {
        addValues(a, b);
-   } else if(operator === 'subtration') {
+   } else if(operator === '-') {
        subtractValues(a, b);
-   } else if(operator === 'multiplication'){
+   } else if(operator === 'x'){
        multiplyValues(a, b);
-   } else if(operator === 'division'){
+   } else if(operator === '/'){
        divideValues(a, b);
    }
    
 }
-addValues(5, 10);
-subtractValues(5, 10);
-multiplyValues(5, 10);
-divideValues(5, 10);
-operate('addition', 10, 15);
+
+function addEvent() {
+    for(let i =0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function() {
+           if(count === 0 && !btn[i].classList.contains('operator')){
+                a += btn[i].value;
+              display.textContent = a;
+              console.log(a); 
+           } else if (btn[i].classList.contains('operator') && !btn[i].classList.contains('equals')) {
+                count = 1;
+                operator = btn[i].value;
+                console.log(operator);
+                console.log(count)
+           } else if (count === 1 && !btn[i].classList.contains('equals')) {  
+               a = display.textContent;
+               console.log(a)  
+                display.textContent = '';
+                display.textContent += btn[i].value;
+                b += btn[i].value;
+                console.log('asd' + b);
+                count = 2;
+           } else if(count === 2  && !btn[i].classList.contains('equals')) {
+                display.textContent += btn[i].value;
+                b += btn[i].value;
+           }
+            else if (btn[i].value === '=') {
+               count = 0;
+               operate(operator, a, b);
+           }
+        });
+       
+    }
+    console.log(a);
+    
+}
+
+function restoreCalc() {
+    count = 0;
+    a = '';
+    b = '';
+    display.textContent;
+}
+
+addEvent()
