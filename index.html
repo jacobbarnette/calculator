@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <script src="https://kit.fontawesome.com/d56d746569.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/assets/css/styles.css">
     <title>Calculator</title>
 </head>
 <body>
    <div id='container'>
       <div id="display"></div>
-      
+         <button class="btn operator" name='backspace' value='backspace' id='backspace'><i class="fas fa-backspace"></i></button>
          <button class='numberBtn btn' name="one" value="1"><span>1</span></button> 
          <button type="button" class='numberBtn btn' name="two" value="2"><span>2</span></button> 
          <button type="button" class='numberBtn btn' name="three" value="3"><span>3</span></button> 
@@ -27,7 +28,7 @@
          <button type="button" class="btn operator" name="times" value="x"><span>x</span></button> 
             
          
-         <button type="button" id="clear" class='btn'name="clear" value="c"><span>C</span></button> 
+         <button type="button" id="clear" class='btn clear' name="clear" value="c"><span>C</span></button> 
          <button type="button" class='numberBtn btn' name="zero" value="0"><span>0</span></button> 
          <button type="button" class='btn operator equals' name="equals" value="="><span>=</span></button> 
          <button type="button" class="btn operator" name="div" value="/"><span>/</span></button> 

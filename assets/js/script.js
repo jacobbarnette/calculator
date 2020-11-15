@@ -7,7 +7,7 @@ let b = ''
 let count = 0;
 
 /* clear display */
-clear.addEventListener('click', () => display.textContent = '');
+clear.addEventListener('click', restoreCalc);
 
 /* add function */
 function addValues(a, b) {
@@ -55,9 +55,15 @@ function addEvent() {
     for(let i =0; i < btn.length; i++) {
         btn[i].addEventListener('click', function() {
            if(count === 0 && !btn[i].classList.contains('operator')){
+               if(!btn[i].classList.contains('clear')) {
                 a += btn[i].value;
-              display.textContent = a;
-              console.log(a); 
+                display.textContent = a;
+                console.log(a); 
+               }
+                else if(btn[i].classList.contains('clear')){
+                    let clear = 'clear';
+                    restoreCalc(clear);
+                }
            } else if (btn[i].classList.contains('operator') && !btn[i].classList.contains('equals')) {
                 count = 1;
                 operator = btn[i].value;
@@ -84,11 +90,22 @@ function addEvent() {
     
 }
 
-function restoreCalc() {
+function restoreCalc(clear) {
+   if(clear === 'clear') {
+    display.textContent = '';
     count = 0;
     a = '';
     b = '';
-    display.textContent;
+   }
+    count = 0;
+    a = '';
+    b = '';
+   }
+  
+
+
+function resetCalc(){
+
 }
 
 addEvent()
