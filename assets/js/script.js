@@ -1,6 +1,5 @@
 let display = document.getElementById('display');
 let btn = document.querySelectorAll('.btn');
-//let operatorBtn = document.getElementsByClassName('operator');
 let operator = '';
 let clear = document.getElementById('clear');
 let a = display.textContent;
@@ -66,20 +65,18 @@ function addEvent() {
                 console.log(count)
            } else if (count === 1 && !btn[i].classList.contains('equals')) {  
                a = display.textContent;
-               console.log(a)  
                 display.textContent = '';
                 display.textContent += btn[i].value;
                 b += btn[i].value;
-                console.log('asd' + b);
                 count = 2;
+                operate(operator, a, b);
            } else if(count === 2  && !btn[i].classList.contains('equals')) {
                 display.textContent += btn[i].value;
                 b += btn[i].value;
+           } else if(count === 2 && btn[i].value === '=') {
+               operate(operator, a, b)
            }
-            else if (btn[i].value === '=') {
-               count = 0;
-               operate(operator, a, b);
-           }
+           
         });
        
     }

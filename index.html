@@ -8,40 +8,34 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1 id="header">Calculator</h1>
-    <div id="container">
-        <table>
-            <tr>
-               <td colspan="4">
-                  <div id="display"></div> 
-               </td>
-            </tr>
-            <tr>
-               <td><input type="button" class='numberBtn btn' name="one" value="1"></td>
-               <td><input type="button" class='numberBtn btn' name="two" value="2"></td>
-               <td><input type="button" class='numberBtn btn' name="three" value="3"></td>
-               <td><input type="button" class="btn operator" name="plus" value="+"></td>
-            </tr>
-            <tr>
-               <td><input type="button" class='numberBtn btn' name="four" value="4"></td>
-               <td><input type="button" class='numberBtn btn' name="five" value="5"></td>
-               <td><input type="button" class='numberBtn btn' name="six" value="6"></td>
-               <td><input type="button" class="btn operator" name="minus" value="-"></td>
-            </tr>
-            <tr>
-               <td><input type="button" class='numberBtn btn' name="seven" value="7"></td>
-               <td><input type="button" class='numberBtn btn' name="eight" value="8"></td>
-               <td><input type="button" class='numberBtn btn' name="nine" value="9"></td>
-               <td><input type="button" class="btn operator" name="times" value="x"></td>
-            </tr>
-            <tr>
-               <td><input type="button" id="clear" name="clear" value="c"></td>
-               <td><input type="button" class='numberBtn btn' name="zero" value="0"></td>
-               <td><input type="button" class='btn operator equals' name="equals" value="="></td>
-               <td><input type="button" class="btn operator" name="div" value="/"></td>
-            </tr>
-         </table>
-    </div>
+   <div id='container'>
+      <div id="display"></div>
+      
+         <button class='numberBtn btn' name="one" value="1"><span>1</span></button> 
+         <button type="button" class='numberBtn btn' name="two" value="2"><span>2</span></button> 
+         <button type="button" class='numberBtn btn' name="three" value="3"><span>3</span></button> 
+         <button type="button" class="btn operator" name="plus" value="+"><span>+</span></button>             
+         <button type="button" class='numberBtn btn' name="four" value="4"><span>4</span></button> 
+         <button type="button" class='numberBtn btn' name="five" value="5"><span>5</span></button> 
+         <button type="button" class='numberBtn btn' name="six" value="6"><span>6</span></button> 
+         <button type="button" class="btn operator" name="minus" value="-"><span>-</span></button> 
+            
+         
+         <button type="button" class='numberBtn btn' name="seven" value="7"><span>7</span></button> 
+         <button type="button" class='numberBtn btn' name="eight" value="8"><span>8</span></button> 
+         <button type="button" class='numberBtn btn' name="nine" value="9"><span>9</span></button> 
+         <button type="button" class="btn operator" name="times" value="x"><span>x</span></button> 
+            
+         
+         <button type="button" id="clear" class='btn'name="clear" value="c"><span>C</span></button> 
+         <button type="button" class='numberBtn btn' name="zero" value="0"><span>0</span></button> 
+         <button type="button" class='btn operator equals' name="equals" value="="><span>=</span></button> 
+         <button type="button" class="btn operator" name="div" value="/"><span>/</span></button> 
+      </div>
+   
+      </div>
+      
+      
     <script src="/assets/js/script.js"></script>
 </body>
 </html>

@@ -1,18 +1,37 @@
-#header {
-    text-align: center;
+html {
+    background-color: #FDFFFC;
 }
 
-#container {
-    margin: 0 auto;
-    text-align: center;
+#container{
+    width: 35%;
+    margin: 10% auto;
+    display: grid;
+    height: 26em;
+    padding: 34px;
+    background-color: #235789;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+ 
 }
 
 #display {
     border: 1px solid black;
+    background-color: #FDFFFC;
+    width: 100%;
+    height: 100px;
+    grid-column: 1/5;
+    margin-bottom: 2%;
 }
 
-input[type='button'] {
-    color: red;
-    height: 50px;
-    width: 50px;
+.btn {
+    height: 4.65em;
+    width: 100%;
+    border: none;
+    font-size: .9em;
+    background-color: #FDFFFC;
+    color: #235789;
+}
+
+span {
+    font-size: 50px;
 }
