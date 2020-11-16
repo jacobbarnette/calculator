@@ -6,13 +6,19 @@ html {
     width: 35%;
     margin: 10% auto;
     display: grid;
+    position: relative;
     height: 26em;
     padding: 34px;
     background-color: #1F78FF;
     grid-template-columns: repeat(4, 1fr);
+    grid-column-end: 5;
     gap: 12px;
- 
 }
+body {
+    overflow: hidden;
+}
+
+
 
 #display {
     color: #1F78FF;
@@ -25,15 +31,25 @@ html {
     text-align: right;
 }
 
+#clear {
+    grid-column: 1/;
+}
+
 .btn {
     height: 4.65em;
     width: 100%;
     border: none;
+    position: relative;
+    flex: 0 0 calc(50% -20px);
     font-size: .9em;
     color: #FDFFFC;
     background-color: #235789;
+    flex-direction: column;
+    flex
 }
-
+.decimal{
+   grid-row: 1/5;
+}
 #backspace {
     height: 100px;
 }
